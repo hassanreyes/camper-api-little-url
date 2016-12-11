@@ -5,7 +5,7 @@ var express = require('express'),
 
 //Connect and init mongodb
 var mongodb = require('mongodb').MongoClient,
-    dbUrl = process.env.MONGOLAB_URI || "mongodb://localhost:27017/littleurl";
+    dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/littleurl";
   
 function generateKey(){
   return Math.floor((Math.random() * 9999) + 1);
@@ -85,6 +85,7 @@ app.get('/little/*', (req, res) => {
 
 
 app.get('/', (req, res) => {
+  
   res.send("<h1>FreeCodeCamp API: URL Shortener Microservice</h1><p>Pass a URL as a parameter to get a short URL as JSON format. Just as this:</p><code>https://camper-api-project-hassanreyes.c9users.io/new/http://google.com</code>");
 });
 
