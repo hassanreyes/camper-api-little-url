@@ -9,6 +9,8 @@
   "author": "hassanreyes",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mongodb": "^2.2.15",
+    "url-valid": "^0.3.0"
   }
 }
