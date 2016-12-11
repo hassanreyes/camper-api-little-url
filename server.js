@@ -85,8 +85,13 @@ app.get('/little/*', (req, res) => {
 
 
 app.get('/', (req, res) => {
-  
-  res.send("<h1>FreeCodeCamp API: URL Shortener Microservice</h1><p>Pass a URL as a parameter to get a short URL as JSON format. Just as this:</p><code>https://camper-api-project-hassanreyes.c9users.io/new/http://google.com</code>");
+  var sampleURL = createShortURL(req, "little/http://google.com");
+  var html = "<h1>FreeCodeCamp API: URL Shortener Microservice</h1>";
+  html += "<p>Pass a URL as a parameter to get a short URL as JSON format. Just as this:</p>";
+  html += "<code>" + sampleURL + "</code>";
+  html += "<p>The miscroservice will retrun a JSON document just like this:</p>";
+  html += '<code>{"original_url":"http://www.google.com","short_url":"http://hr-littleurl-ms.herokuapp.com/4543"}</code>';
+  res.send(html);
 });
 
 
